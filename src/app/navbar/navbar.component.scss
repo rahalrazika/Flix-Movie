@@ -1,0 +1,50 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #102c3d;
+  padding: 10px 20px;
+}
+
+.navbar-links {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.logo img {
+  max-width: 50px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  padding-left: 2rem;
+}
+
+mat-form-field {
+  width: 200px;
+  transition: width 0.3s;
+}
+mat-form-field.expanded {
+  width: 400px;
+}
+
+.login-button button {
+  background-color: #004159;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.login-button button:hover {
+  background-color: #00141c;
+}
+
+mat-icon {
+  margin-left: 10px; 
+  cursor: pointer;
+}
