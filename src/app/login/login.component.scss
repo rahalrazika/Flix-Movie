@@ -1,0 +1,57 @@
+.custom-width {
+  width: 20.7rem;
+}
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #2a6175;
+}
+
+.logo-container {
+  margin-bottom: 20px;
+}
+
+.logo-container img {
+  max-width: 100px;
+}
+
+.login-card {
+  width: 400px;
+  padding: 20px;
+  background-color: transparent;
+  border-radius: 10px;
+  border: none;
+}
+
+.mat-form-field {
+  width: 100%;
+  margin-bottom: 20px;
+  background-color: transparent;
+  border: none;
+}
+
+
+.login-button {
+  width: 100%;
+  font-size: 1.2rem;
+  padding: 15px;
+  background-color: #102c3d;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: #00141c;
+    color: #fff;
+  }
+}
+
+.register-link {
+  margin-top: 20px;
+  color: #fff;
+}

@@ -12,9 +12,17 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { RegistrationComponent } from './registration/registration.component';
+import { LoginComponent } from './login/login.component';
+import { MatCardModule } from '@angular/material/card';
+import { FormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from './home/home.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, RegistrationComponent, LoginComponent, HomeComponent, NavbarComponent, FooterComponent],
   imports: [
     BrowserModule,
     MatToolbarModule, 
@@ -23,6 +31,9 @@ import { MatInputModule } from '@angular/material/input';
     MatFormFieldModule, 
     MatInputModule, 
     ReactiveFormsModule,
+    FormsModule,
+    MatCardModule,
+    AppRoutingModule,
     provideFirebaseApp (() => initializeApp(environment.firebaseConfig)),
     provideAuth( () => getAuth())
   ],
