@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 import { environment } from '../environments/environment';
@@ -23,27 +24,30 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeService } from './home/home.service';
 import { MatListModule } from '@angular/material/list';
+import { SliderComponent } from './slider/slider.component';
+
 
 
 @NgModule({
-  declarations: [AppComponent, RegistrationComponent, LoginComponent, HomeComponent, NavbarComponent, FooterComponent],
+  declarations: [AppComponent, RegistrationComponent, LoginComponent, HomeComponent, NavbarComponent, FooterComponent, SliderComponent],
   imports: [
     BrowserModule,
-    MatToolbarModule, 
-    MatIconModule, 
-    MatButtonModule, 
-    MatFormFieldModule, 
-    MatInputModule, 
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
     ReactiveFormsModule,
     FormsModule,
     MatCardModule,
     AppRoutingModule,
     HttpClientModule,
     MatListModule,
-    provideFirebaseApp (() => initializeApp(environment.firebaseConfig)),
-    provideAuth( () => getAuth())
+    BrowserAnimationsModule,
+    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
+    provideAuth(() => getAuth())
   ],
   providers: [HomeService],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

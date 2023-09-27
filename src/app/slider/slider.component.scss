@@ -1,0 +1,38 @@
+.swiper-container {
+  width: 100%;
+  height: 400px;
+}
+
+.swiper-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  color: #fff;
+  height: auto;
+  min-height: 400px;
+}
+
+.slide-content {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.slide-details h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.slide-details p {
+  font-size: 16px;
+}
+
+.swiper-slide img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}

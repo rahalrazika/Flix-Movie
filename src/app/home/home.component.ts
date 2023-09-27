@@ -15,6 +15,8 @@ export class HomeComponent {
   currentPage = 1;
   totalPages: number = 0;
   moviesPerPage = 10;
+  popularMovies: any[] = [];
+
 
   constructor(private homeService: HomeService) { }
 
@@ -29,6 +31,17 @@ export class HomeComponent {
     });
 
     this.loadMovies();
+    this.loadTopMovies();
+
+  }
+
+  loadTopMovies(): void {
+    this.homeService.getAllMovies(this.currentPage).subscribe((data: any) => {
+      this.allMovies = data.results;
+      this.totalPages = Math.ceil(this.allMovies.length / this.moviesPerPage);
+      this.allMovies.sort((a, b) => b.vote_average - a.vote_average);
+      this.popularMovies = this.allMovies.slice(0, 5);
+    });
   }
 
   loadMovies(): void {
