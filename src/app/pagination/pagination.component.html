@@ -1,0 +1,17 @@
+<div class="pagination-container">
+  <button
+    mat-button
+    (click)="loadPreviousPage()"
+    [disabled]="currentPage === 1"
+  >
+    <mat-icon>keyboard_arrow_left</mat-icon>
+  </button>
+  <span class="page-info">Page {{ currentPage }} of {{ totalPages }}</span>
+  <button
+    mat-button
+    (click)="loadNextPage()"
+    [disabled]="currentPage === totalPages"
+  >
+    <mat-icon>keyboard_arrow_right</mat-icon>
+  </button>
+</div>

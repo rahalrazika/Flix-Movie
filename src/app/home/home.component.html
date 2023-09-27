@@ -57,24 +57,12 @@
         </div>
       </div>
 
-      <!-- Pagination  -->
-      <div class="pagination">
-        <button
-          mat-button
-          (click)="loadPreviousPage()"
-          [disabled]="currentPage === 1"
-        >
-          <mat-icon>keyboard_arrow_left</mat-icon>
-        </button>
-        <span>Page {{ currentPage }}</span>
-        <button
-          mat-button
-          (click)="loadNextPage()"
-          [disabled]="currentPage === totalPages"
-        >
-          <mat-icon>keyboard_arrow_right</mat-icon>
-        </button>
-      </div>
+      <app-pagination
+        [currentPage]="currentPage"
+        [totalPages]="totalPages"
+        (previousPage)="loadPreviousPage()"
+        (nextPage)="loadNextPage()"
+      ></app-pagination>
     </div>
   </div>
 </div>

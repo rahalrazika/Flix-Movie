@@ -25,11 +25,12 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeService } from './home/home.service';
 import { MatListModule } from '@angular/material/list';
 import { SliderComponent } from './slider/slider.component';
+import { PaginationComponent } from './pagination/pagination.component';
 
 
 
 @NgModule({
-  declarations: [AppComponent, RegistrationComponent, LoginComponent, HomeComponent, NavbarComponent, FooterComponent, SliderComponent],
+  declarations: [AppComponent, RegistrationComponent, LoginComponent, HomeComponent, NavbarComponent, FooterComponent, SliderComponent, PaginationComponent],
   imports: [
     BrowserModule,
     MatToolbarModule,
