@@ -27,5 +27,11 @@ export class HomeService {
 
         return this.http.get(`${this.baseUrl}/discover/movie`, { params });
     }
+    
+    getAllSeries(page: number): Observable<any> {
+        const params = new HttpParams().set('api_key', this.apiKey).set('page', page.toString());
+
+        return this.http.get(`${this.baseUrl}/discover/tv`, { params });
+    }
 }
 

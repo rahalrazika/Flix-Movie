@@ -1,12 +1,8 @@
-<h2>All Movies</h2>
 <div class="movie-list">
   <div class="movie-grid">
     <div
       *ngFor="
-        let movie of allMovies.slice(
-          (currentPage - 1) * 10,
-          currentPage * 10
-        )
+        let movie of allMovies.slice((currentPage - 1) * 10, currentPage * 10)
       "
       class="movie-item"
     >
@@ -17,5 +13,4 @@
       <p>{{ movie.title }}</p>
     </div>
   </div>
-
 </div>

@@ -37,17 +37,49 @@
   </div>
 
   <div class="container">
-  
-    <app-all-movies
-    [allMovies]="allMovies"       
-    [currentPage]="currentPage"  
-    [totalPages]="totalPages"      
-  ></app-all-movies>
-    <app-pagination
+    <ul class="nav nav-tabs">
+      <li class="nav-item" (click)="selectTab('movies')">
+        <a class="nav-link" [class.active]="activeTab === 'movies'"
+          >All Movies</a
+        >
+      </li>
+      <li class="nav-item" (click)="selectTab('series')">
+        <a class="nav-link" [class.active]="activeTab === 'series'"
+          >All Series</a
+        >
+      </li>
+    </ul>
+
+    <div *ngIf="activeTab === 'movies'">
+      <app-all-movies
+        [allMovies]="allMovies"
         [currentPage]="currentPage"
         [totalPages]="totalPages"
-        (previousPage)="loadPreviousPage()"
-        (nextPage)="loadNextPage()"
-      ></app-pagination>
+        (loadPreviousPage)="loadPreviousPage()"
+        (loadNextPage)="loadNextPage()"
+      ></app-all-movies>
+    </div>
+
+    <div *ngIf="activeTab === 'series'">
+      <app-all-series
+        [allSeries]="allSeries"
+        [currentPage]="currentSeriesPage"
+        [totalPages]="totalSeriesPages"
+        (loadPreviousPage)="loadPreviousPageSeries()"
+        (loadNextPage)="loadNextPageSeries()"
+      ></app-all-series>
+    </div>
+
+    <!-- Pagination for the active tab -->
+    <app-pagination
+      [currentPage]="activeTab === 'movies' ? currentPage : currentSeriesPage"
+      [totalPages]="activeTab === 'movies' ? totalPages : totalSeriesPages"
+      (previousPage)="
+        activeTab === 'movies' ? loadPreviousPage() : loadPreviousPageSeries()
+      "
+      (nextPage)="
+        activeTab === 'movies' ? loadNextPage() : loadNextPageSeries()
+      "
+    ></app-pagination>
   </div>
 </div>

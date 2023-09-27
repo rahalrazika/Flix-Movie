@@ -1,0 +1,16 @@
+<div class="series-list">
+  <div class="series-grid">
+    <div
+      *ngFor="
+        let series of allSeries.slice((currentPage - 1) * 10, currentPage * 10)
+      "
+      class="series-item"
+    >
+      <img
+        [src]="'https://image.tmdb.org/t/p/w500/' + series.poster_path"
+        alt="{{ series.name }}"
+      />
+      <p>{{ series.name }}</p>
+    </div>
+  </div>
+</div>

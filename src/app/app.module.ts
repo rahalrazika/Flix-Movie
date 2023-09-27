@@ -27,11 +27,12 @@ import { MatListModule } from '@angular/material/list';
 import { SliderComponent } from './slider/slider.component';
 import { PaginationComponent } from './pagination/pagination.component';
 import { AllMoviesComponent } from './all-movies/all-movies.component';
+import { AllSeriesComponent } from './all-series/all-series.component';
 
 
 
 @NgModule({
-  declarations: [AppComponent, RegistrationComponent, LoginComponent, HomeComponent, NavbarComponent, FooterComponent, SliderComponent, PaginationComponent, AllMoviesComponent],
+  declarations: [AppComponent, RegistrationComponent, LoginComponent, HomeComponent, NavbarComponent, FooterComponent, SliderComponent, PaginationComponent, AllMoviesComponent, AllSeriesComponent],
   imports: [
     BrowserModule,
     MatToolbarModule,

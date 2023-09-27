@@ -12,10 +12,14 @@ export class HomeComponent {
   movies: any[] = [];
   tvSeries: any[] = [];
   allMovies: any[] = [];
+  allSeries: any[] = [];
   currentPage = 1;
   totalPages: number = 0;
   moviesPerPage = 10;
   popularMovies: any[] = [];
+  activeTab: 'movies' | 'series' = 'movies';
+  currentSeriesPage = 1;
+  totalSeriesPages = 0;
 
 
   constructor(private homeService: HomeService) { }
@@ -28,6 +32,8 @@ export class HomeComponent {
 
     this.homeService.getPopularTVSeries().subscribe((data) => {
       this.tvSeries = data.results;
+      console.log(this.tvSeries);
+
     });
 
     this.loadMovies();
@@ -51,6 +57,13 @@ export class HomeComponent {
     });
   }
 
+  loadSeries(): void {    
+    this.homeService.getAllSeries(this.currentSeriesPage).subscribe((data: any) => {
+      this.allSeries = data.results;
+      this.totalSeriesPages = Math.ceil(this.allSeries.length / this.moviesPerPage);
+    });
+  }
+
   loadNextPage(): void {
     if (this.currentPage < this.totalPages) {
       this.currentPage++;
@@ -63,6 +76,28 @@ export class HomeComponent {
     if (this.currentPage > 1) {
       this.currentPage--;
       this.loadMovies();
+    }
+  }
+  selectTab(tab: 'movies' | 'series'): void {
+    this.activeTab = tab;
+    if (tab === 'series') {
+      this.loadSeries();
+    }
+  }
+
+
+
+  loadPreviousPageSeries(): void {
+    if (this.currentSeriesPage > 1) {
+      this.currentSeriesPage--;
+      this.loadSeries();
+    }
+  }
+
+  loadNextPageSeries(): void {
+    if (this.currentSeriesPage < this.totalSeriesPages) {
+      this.currentSeriesPage++;
+      this.loadSeries();
     }
   }
 }
