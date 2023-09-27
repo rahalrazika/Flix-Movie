@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 
 import { environment } from '../environments/environment';
@@ -20,6 +21,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
+import { HomeService } from './home/home.service';
+import { MatListModule } from '@angular/material/list';
+
 
 @NgModule({
   declarations: [AppComponent, RegistrationComponent, LoginComponent, HomeComponent, NavbarComponent, FooterComponent],
@@ -34,10 +38,12 @@ import { FooterComponent } from './footer/footer.component';
     FormsModule,
     MatCardModule,
     AppRoutingModule,
+    HttpClientModule,
+    MatListModule,
     provideFirebaseApp (() => initializeApp(environment.firebaseConfig)),
     provideAuth( () => getAuth())
   ],
-  providers: [],
+  providers: [HomeService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

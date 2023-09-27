@@ -1,5 +1,76 @@
-<div class="home-container">
-    <h1>Welcome to the Home Page</h1>
-    <p>This is the landing page of your application.</p>
-    <button mat-raised-button routerLink="/login">Login</button>
+<div class="page-content">
+  <div class="container">
+    <h2>Popular Movies</h2>
+    <div class="horizontal-scroll-menu">
+      <div class="scroll-container">
+        <div *ngFor="let movie of movies" class="menu-item">
+          <img
+            width="100"
+            height="150"
+            [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path"
+            alt="{{ movie.title }}"
+          />
+        </div>
+      </div>
+    </div>
   </div>
+
+  <div class="container">
+    <h2>Popular TV Series</h2>
+    <div class="horizontal-scroll-menu">
+      <div class="scroll-container">
+        <div *ngFor="let series of tvSeries" class="menu-item">
+          <img
+            width="100"
+            height="150"
+            [src]="'https://image.tmdb.org/t/p/w500/' + series.poster_path"
+            alt="{{ series.title }}"
+          />
+          <p>{{ series.title }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2>All Movies</h2>
+    <div class="movie-list">
+      <div class="movie-grid">
+        <div
+          *ngFor="
+            let movie of allMovies.slice(
+              (currentPage - 1) * 10,
+              currentPage * 10
+            )
+          "
+          class="movie-item"
+        >
+          <img
+            [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path"
+            alt="{{ movie.title }}"
+          />
+          <p>{{ movie.title }}</p>
+        </div>
+      </div>
+
+      <!-- Pagination  -->
+      <div class="pagination">
+        <button
+          mat-button
+          (click)="loadPreviousPage()"
+          [disabled]="currentPage === 1"
+        >
+          <mat-icon>keyboard_arrow_left</mat-icon>
+        </button>
+        <span>Page {{ currentPage }}</span>
+        <button
+          mat-button
+          (click)="loadNextPage()"
+          [disabled]="currentPage === totalPages"
+        >
+          <mat-icon>keyboard_arrow_right</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
