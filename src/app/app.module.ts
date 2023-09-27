@@ -26,11 +26,12 @@ import { HomeService } from './home/home.service';
 import { MatListModule } from '@angular/material/list';
 import { SliderComponent } from './slider/slider.component';
 import { PaginationComponent } from './pagination/pagination.component';
+import { AllMoviesComponent } from './all-movies/all-movies.component';
 
 
 
 @NgModule({
-  declarations: [AppComponent, RegistrationComponent, LoginComponent, HomeComponent, NavbarComponent, FooterComponent, SliderComponent, PaginationComponent],
+  declarations: [AppComponent, RegistrationComponent, LoginComponent, HomeComponent, NavbarComponent, FooterComponent, SliderComponent, PaginationComponent, AllMoviesComponent],
   imports: [
     BrowserModule,
     MatToolbarModule,
