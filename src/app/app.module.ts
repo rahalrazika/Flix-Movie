@@ -8,7 +8,6 @@ import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { provideAuth, getAuth } from '@angular/fire/auth';
-import { ReactiveFormsModule } from '@angular/forms';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -17,7 +16,6 @@ import { MatInputModule } from '@angular/material/input';
 import { RegistrationComponent } from './pages/registration/registration.component';
 import { LoginComponent } from './pages/login/login.component';
 import { MatCardModule } from '@angular/material/card';
-import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './pages/home/home.component';
 import { NavbarComponent } from './pages/navbar/navbar.component';
@@ -31,6 +29,8 @@ import { AllSeriesComponent } from './pages/all-series/all-series.component';
 import { MovieDetailComponent } from './pages/movie-detail/movie-detail.component';
 import { SeriesDetailComponent } from './pages/series-detail/series-detail.component';
 import { SearchComponent } from './pages/search/search.component';
+import {ReactiveFormsModule} from '@angular/forms';
+
 
 
 
@@ -44,7 +44,6 @@ import { SearchComponent } from './pages/search/search.component';
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
-    FormsModule,
     MatCardModule,
     AppRoutingModule,
     HttpClientModule,

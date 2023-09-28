@@ -10,8 +10,11 @@ export class SliderComponent {
   @Input() movies: any[] = [];
   constructor(private router: Router) { }
 
-  goToMovieDetail(movieId: number): void {
-    this.router.navigate(['/movie-detail', movieId]);
+  goToDetail(item: any): void {
+    if (item.isMovie) {
+      this.router.navigate(['/movie-detail', item.id]);
+    } else {
+      this.router.navigate(['/series-detail', item.id]);
+    }
   }
-
 }

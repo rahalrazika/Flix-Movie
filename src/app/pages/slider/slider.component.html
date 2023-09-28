@@ -1,22 +1,20 @@
 <div class="swiper-container">
   <div class="swiper-wrapper">
     <div
-      *ngFor="let movie of movies"
+      *ngFor="let item of movies"
       class="swiper-slide"
       [ngStyle]="{
         'background-image':
-          'url(https://image.tmdb.org/t/p/w500/' + movie.poster_path + ')'
+          'url(https://image.tmdb.org/t/p/w500/' + item.poster_path + ')'
       }"
     >
       <div class="slide-content">
         <div class="slide-details">
-          <h3>{{ movie.title }}</h3>
-          <p>{{ movie.overview }}</p>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.overview }}</p>
         </div>
-        <button class="detail-button" (click)="goToMovieDetail(movie.id)">Play Now</button>
-
+        <button class="detail-button" (click)="goToDetail(item)">Play Now</button>
       </div>
     </div>
   </div>
-
 </div>

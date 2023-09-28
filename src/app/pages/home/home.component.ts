@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MovieService } from '../../services/movie.service';
 import { Router } from '@angular/router';
+import { forkJoin } from 'rxjs';
 
 
 @Component({
@@ -17,13 +18,13 @@ export class HomeComponent {
   currentPage = 1;
   totalPages: number = 0;
   moviesPerPage = 10;
-  popularMovies: any[] = [];
+  popularItems: any[] = [];
   activeTab: 'movies' | 'series' = 'movies';
   currentSeriesPage = 1;
   totalSeriesPages = 0;
 
 
-  constructor(private homeService: MovieService, private router: Router ) { }
+  constructor(private homeService: MovieService, private router: Router) { }
 
 
   ngOnInit(): void {
@@ -38,18 +39,10 @@ export class HomeComponent {
     });
 
     this.loadMovies();
-    this.loadTopMovies();
+    this.loadTopItems();
 
   }
 
-  loadTopMovies(): void {
-    this.homeService.getAllMovies(this.currentPage).subscribe((data: any) => {
-      this.allMovies = data.results;
-      this.totalPages = Math.ceil(this.allMovies.length / this.moviesPerPage);
-      this.allMovies.sort((a, b) => b.vote_average - a.vote_average);
-      this.popularMovies = this.allMovies.slice(0, 5);
-    });
-  }
 
   loadMovies(): void {
     this.homeService.getAllMovies(this.currentPage).subscribe((data: any) => {
@@ -58,7 +51,7 @@ export class HomeComponent {
     });
   }
 
-  loadSeries(): void {    
+  loadSeries(): void {
     this.homeService.getAllSeries(this.currentSeriesPage).subscribe((data: any) => {
       this.allSeries = data.results;
       this.totalSeriesPages = Math.ceil(this.allSeries.length / this.moviesPerPage);
@@ -107,5 +100,19 @@ export class HomeComponent {
   }
   showSeriesDetail(seriesId: number) {
     this.router.navigate(['/series-detail', seriesId]);
+  }
+
+  loadTopItems(): void {
+    const currentPage = 1;
+    this.homeService.getAllMovies(currentPage).subscribe((moviesData: any) => {
+      const movies = moviesData.results;
+
+      this.homeService.getAllSeries(currentPage).subscribe((seriesData: any) => {
+        const series = seriesData.results;
+        const allItems = [...movies, ...series];
+        allItems.sort((a, b) => b.vote_average - a.vote_average);
+        this.popularItems = allItems.slice(0, 5);
+      });
+    });
   }
 }
