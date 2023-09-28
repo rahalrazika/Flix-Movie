@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MovieService } from '../../services/movie.service';
 
 @Component({
@@ -15,7 +15,9 @@ export class SeriesDetailComponent {
 
   constructor(
     private route: ActivatedRoute,
-    private movieService: MovieService
+    private movieService: MovieService,
+    private router: Router
+
   ) { }
 
   ngOnInit(): void {
@@ -46,5 +48,7 @@ export class SeriesDetailComponent {
       );
     });
   }
-
+  goBack(): void {
+    this.router.navigate(['/']);
+  }
 }

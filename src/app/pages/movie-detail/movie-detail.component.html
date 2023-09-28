@@ -1,4 +1,7 @@
 <div class="container">
+  <button (click)="goBack()" class="back-button">
+    <span class="back-icon"><mat-icon>arrow_back</mat-icon></span>
+  </button>
   <div *ngIf="movie" class="movie-details">
     <div class="image-container">
       <img

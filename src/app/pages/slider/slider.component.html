@@ -10,10 +10,12 @@
     >
       <div class="slide-content">
         <div class="slide-details">
-          <h3>{{ item.title }}</h3>
-          <p>{{ item.overview }}</p>
+          {{ item.title ? item.title : item.name }}
+          <p>{{ item.overview | slice:0:150 }}{{ item.overview.length > 100 ? '...' : '' }}</p>
         </div>
-        <button class="detail-button" (click)="goToDetail(item)">Play Now</button>
+        <button class="detail-button" (click)="goToDetail(item)">
+          Play Now
+        </button>
       </div>
     </div>
   </div>

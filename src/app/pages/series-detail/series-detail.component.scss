@@ -36,20 +36,6 @@
 
 .series-details .text-container {
   flex: 1;
-  padding: 10px;
-}
-
-.series-details h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-.series-details p {
-  font-size: 16px;
-  margin: 0;
-}
-.series-details .text-container {
-  flex: 1;
   padding: 20px;
   border-radius: 0 10px 10px 0;
 }
@@ -80,5 +66,28 @@
 .trailer-button:hover {
   cursor: pointer;
   background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.back-button {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+}
+
+.back-button .back-icon {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.back-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
   transform: scale(1.05);
 }

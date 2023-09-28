@@ -11,10 +11,11 @@ export class SliderComponent {
   constructor(private router: Router) { }
 
   goToDetail(item: any): void {
-    if (item.isMovie) {
+    if (item.title) {
       this.router.navigate(['/movie-detail', item.id]);
-    } else {
+    } else if (item.name) {
       this.router.navigate(['/series-detail', item.id]);
-    }
+    } 
   }
+  
 }
