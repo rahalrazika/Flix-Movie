@@ -1,0 +1,18 @@
+<div class="container">
+    <div *ngIf="series" class="series-details">
+      <div class="image-container">
+        <img
+          [src]="'https://image.tmdb.org/t/p/w500/' + series.poster_path"
+          alt="{{ series.name }}"
+        />
+      </div>
+  
+      <div class="text-container">
+        <h2>{{ series.name }}</h2>
+        <p><strong>Release Date:</strong> {{ series.release_date }}</p>
+        <p><strong>Overview:</strong> {{ series.overview }}</p>
+        <p><strong>Vote Average:</strong> {{ series.vote_average }}</p>
+      </div>
+    </div>
+  </div>
+  

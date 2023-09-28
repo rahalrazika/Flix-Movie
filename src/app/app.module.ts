@@ -22,17 +22,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
-import { HomeService } from './home/home.service';
+import { HomeService } from './services/home.service';
 import { MatListModule } from '@angular/material/list';
 import { SliderComponent } from './slider/slider.component';
 import { PaginationComponent } from './pagination/pagination.component';
 import { AllMoviesComponent } from './all-movies/all-movies.component';
 import { AllSeriesComponent } from './all-series/all-series.component';
+import { MovieDetailComponent } from './movie-detail/movie-detail.component';
+import { SeriesDetailComponent } from './series-detail/series-detail.component';
 
 
 
 @NgModule({
-  declarations: [AppComponent, RegistrationComponent, LoginComponent, HomeComponent, NavbarComponent, FooterComponent, SliderComponent, PaginationComponent, AllMoviesComponent, AllSeriesComponent],
+  declarations: [AppComponent, RegistrationComponent, LoginComponent, HomeComponent, NavbarComponent, FooterComponent, SliderComponent, PaginationComponent, AllMoviesComponent, AllSeriesComponent, MovieDetailComponent, SeriesDetailComponent],
   imports: [
     BrowserModule,
     MatToolbarModule,

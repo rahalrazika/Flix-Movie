@@ -1,0 +1,17 @@
+<div class="container">
+  <div *ngIf="movie" class="movie-details">
+    <div class="image-container">
+      <img
+        [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path"
+        alt="{{ movie.name }}"
+      />
+    </div>
+
+    <div class="text-container">
+      <h2>{{ movie.title }}</h2>
+      <p><strong>Release Date:</strong> {{ movie.release_date }}</p>
+      <p><strong>Overview:</strong> {{ movie.overview }}</p>
+      <p><strong>Vote Average:</strong> {{ movie.vote_average }}</p>
+    </div>
+  </div>
+</div>

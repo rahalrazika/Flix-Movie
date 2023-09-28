@@ -5,6 +5,8 @@
         let series of allSeries.slice((currentPage - 1) * 10, currentPage * 10)
       "
       class="series-item"
+      (click)="showSeriesDetail(series.id)"
+
     >
       <img
         [src]="'https://image.tmdb.org/t/p/w500/' + series.poster_path"

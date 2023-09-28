@@ -5,6 +5,7 @@
         let movie of allMovies.slice((currentPage - 1) * 10, currentPage * 10)
       "
       class="movie-item"
+      (click)="showMovieDetail(movie.id)"
     >
       <img
         [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path"

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { HomeService } from './home.service';
+import { HomeService } from '../services/home.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -22,7 +23,7 @@ export class HomeComponent {
   totalSeriesPages = 0;
 
 
-  constructor(private homeService: HomeService) { }
+  constructor(private homeService: HomeService, private router: Router ) { }
 
 
   ngOnInit(): void {
@@ -99,5 +100,12 @@ export class HomeComponent {
       this.currentSeriesPage++;
       this.loadSeries();
     }
+  }
+
+  showMovieDetail(movieId: number) {
+    this.router.navigate(['/movie-detail', movieId]);
+  }
+  showSeriesDetail(seriesId: number) {
+    this.router.navigate(['/series-detail', seriesId]);
   }
 }
