@@ -22,7 +22,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './pages/home/home.component';
 import { NavbarComponent } from './pages/navbar/navbar.component';
 import { FooterComponent } from './pages/footer/footer.component';
-import { HomeService } from './services/home.service';
+import { MovieService } from './services/movie.service';
 import { MatListModule } from '@angular/material/list';
 import { SliderComponent } from './pages/slider/slider.component';
 import { PaginationComponent } from './pages/pagination/pagination.component';
@@ -53,7 +53,7 @@ import { SearchComponent } from './pages/search/search.component';
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideAuth(() => getAuth())
   ],
-  providers: [HomeService],
+  providers: [MovieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

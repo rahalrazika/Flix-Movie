@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { DetailsService } from '../../services/detail.service';
+import { MovieService } from '../../services/movie.service';
 
 @Component({
   selector: 'app-movie-detail',
@@ -14,7 +14,7 @@ export class MovieDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private detailService: DetailsService
+    private homeService: MovieService
   ) { }
 
 
@@ -22,11 +22,11 @@ export class MovieDetailComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.movieId = +params['id'];
 
-      this.detailService.getMovieDetails(this.movieId).subscribe(
+      this.homeService.getMovieDetails(this.movieId).subscribe(
         (data) => {
           this.movie = data;
 
-          this.detailService.getMovieVideos(this.movieId).subscribe(
+          this.homeService.getMovieVideos(this.movieId).subscribe(
             (videosData) => {
               if (videosData.results && videosData.results.length > 0) {
                 const trailerKey = videosData.results[0].key;

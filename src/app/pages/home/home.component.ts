@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HomeService } from '../../services/home.service';
+import { MovieService } from '../../services/movie.service';
 import { Router } from '@angular/router';
 
 
@@ -23,7 +23,7 @@ export class HomeComponent {
   totalSeriesPages = 0;
 
 
-  constructor(private homeService: HomeService, private router: Router ) { }
+  constructor(private homeService: MovieService, private router: Router ) { }
 
 
   ngOnInit(): void {
