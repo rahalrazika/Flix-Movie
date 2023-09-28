@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HomeService } from '../services/home.service';
+import { HomeService } from '../../services/home.service';
 import { Router } from '@angular/router';
 
 

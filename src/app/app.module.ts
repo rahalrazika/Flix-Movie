@@ -14,22 +14,22 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { RegistrationComponent } from './registration/registration.component';
-import { LoginComponent } from './login/login.component';
+import { RegistrationComponent } from './pages/registration/registration.component';
+import { LoginComponent } from './pages/login/login.component';
 import { MatCardModule } from '@angular/material/card';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
-import { HomeComponent } from './home/home.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from './pages/home/home.component';
+import { NavbarComponent } from './pages/navbar/navbar.component';
+import { FooterComponent } from './pages/footer/footer.component';
 import { HomeService } from './services/home.service';
 import { MatListModule } from '@angular/material/list';
-import { SliderComponent } from './slider/slider.component';
-import { PaginationComponent } from './pagination/pagination.component';
-import { AllMoviesComponent } from './all-movies/all-movies.component';
-import { AllSeriesComponent } from './all-series/all-series.component';
-import { MovieDetailComponent } from './movie-detail/movie-detail.component';
-import { SeriesDetailComponent } from './series-detail/series-detail.component';
+import { SliderComponent } from './pages/slider/slider.component';
+import { PaginationComponent } from './pages/pagination/pagination.component';
+import { AllMoviesComponent } from './pages/all-movies/all-movies.component';
+import { AllSeriesComponent } from './pages/all-series/all-series.component';
+import { MovieDetailComponent } from './pages/movie-detail/movie-detail.component';
+import { SeriesDetailComponent } from './pages/series-detail/series-detail.component';
 
 
 
