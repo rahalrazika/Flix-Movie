@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { MovieService as DetailsService } from '../services/detail.service';
+import { DetailsService } from '../services/detail.service';
 
 @Component({
   selector: 'app-series-detail',
@@ -10,6 +10,8 @@ import { MovieService as DetailsService } from '../services/detail.service';
 export class SeriesDetailComponent {
   series: any;
   seriesId!: number;
+  trailerVideoKey: string | undefined;
+
 
   constructor(
     private route: ActivatedRoute,
@@ -26,6 +28,20 @@ export class SeriesDetailComponent {
         },
         (error) => {
           console.error('Error fetching series details:', error);
+        }
+      );
+
+      this.detailService.getSeriesVideos(this.seriesId).subscribe(
+        (videosData) => {
+          if (videosData.results && videosData.results.length > 0) {
+            const trailerKey = videosData.results[0].key;
+            if (trailerKey) {
+              this.trailerVideoKey = trailerKey;
+            }
+          }
+        },
+        (error) => {
+          console.error('Error fetching series videos:', error);
         }
       );
     });

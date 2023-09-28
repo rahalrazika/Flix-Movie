@@ -12,6 +12,16 @@
       <p><strong>Release Date:</strong> {{ movie.release_date }}</p>
       <p><strong>Overview:</strong> {{ movie.overview }}</p>
       <p><strong>Vote Average:</strong> {{ movie.vote_average }}</p>
+
+      <a
+        *ngIf="trailerVideoKey"
+        [href]="'https://www.youtube.com/watch?v=' + trailerVideoKey"
+        target="_blank"
+        class="trailer-button"
+      >
+        Watch Trailer
+      </a>
+      <p *ngIf="!trailerVideoKey">Trailer not available for this series.</p>
     </div>
   </div>
 </div>
