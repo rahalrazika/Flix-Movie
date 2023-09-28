@@ -13,6 +13,8 @@
           <h3>{{ movie.title }}</h3>
           <p>{{ movie.overview }}</p>
         </div>
+        <button class="detail-button" (click)="goToMovieDetail(movie.id)">Play Now</button>
+
       </div>
     </div>
   </div>
