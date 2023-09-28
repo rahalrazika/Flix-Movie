@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HotToastModule } from '@ngneat/hot-toast';
 
 
 import { environment } from '../environments/environment';
@@ -29,7 +30,8 @@ import { AllSeriesComponent } from './pages/all-series/all-series.component';
 import { MovieDetailComponent } from './pages/movie-detail/movie-detail.component';
 import { SeriesDetailComponent } from './pages/series-detail/series-detail.component';
 import { SearchComponent } from './pages/search/search.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AuthService } from './services/auth.service';
 
 
 
@@ -49,10 +51,11 @@ import {ReactiveFormsModule} from '@angular/forms';
     HttpClientModule,
     MatListModule,
     BrowserAnimationsModule,
+    HotToastModule.forRoot(),
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideAuth(() => getAuth())
   ],
-  providers: [MovieService],
+  providers: [MovieService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
