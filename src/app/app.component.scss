@@ -1,7 +1,11 @@
-main {
-  margin-bottom: 90px;
+html,
+body {
+  height: 100%;
 }
-.content {
+
+main {
+  min-height: 90vh;
   background-color: #2a6175;
   color: #fff;
+  margin-bottom: 90px;
 }
