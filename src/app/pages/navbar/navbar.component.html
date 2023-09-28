@@ -4,22 +4,8 @@
   </div>
   <div class="navbar-links">
     <div class="search-bar">
-      <mat-form-field appearance="fill">
-        <mat-label>Search</mat-label>
-        <input
-          matInput
-          placeholder="Search..."
-          (click)="toggleSearch()"
-          [ngClass]="{ expanded: isSearchExpanded }"
-        />
-      </mat-form-field>
-      <button
-        mat-button
-        matSuffix
-        *ngIf="isSearchExpanded"
-        (click)="toggleSearch()"
-      >
-        <mat-icon>search</mat-icon>
+      <button mat-button matSuffix (click)="goToSearch()">
+        <mat-icon>{{'search' }}</mat-icon>
       </button>
     </div>
     <div class="login-button">

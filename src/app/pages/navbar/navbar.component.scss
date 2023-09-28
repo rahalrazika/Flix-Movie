@@ -22,13 +22,7 @@
   padding-left: 2rem;
 }
 
-mat-form-field {
-  width: 200px;
-  transition: width 0.3s;
-}
-mat-form-field.expanded {
-  width: 400px;
-}
+
 
 .login-button button {
   background-color: #004159;
@@ -46,5 +40,6 @@ mat-form-field.expanded {
 
 mat-icon {
   margin-left: 10px; 
+  color: #fff;
   cursor: pointer;
 }

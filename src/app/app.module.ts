@@ -30,11 +30,12 @@ import { AllMoviesComponent } from './pages/all-movies/all-movies.component';
 import { AllSeriesComponent } from './pages/all-series/all-series.component';
 import { MovieDetailComponent } from './pages/movie-detail/movie-detail.component';
 import { SeriesDetailComponent } from './pages/series-detail/series-detail.component';
+import { SearchComponent } from './pages/search/search.component';
 
 
 
 @NgModule({
-  declarations: [AppComponent, RegistrationComponent, LoginComponent, HomeComponent, NavbarComponent, FooterComponent, SliderComponent, PaginationComponent, AllMoviesComponent, AllSeriesComponent, MovieDetailComponent, SeriesDetailComponent],
+  declarations: [AppComponent, RegistrationComponent, LoginComponent, HomeComponent, NavbarComponent, FooterComponent, SliderComponent, PaginationComponent, AllMoviesComponent, AllSeriesComponent, MovieDetailComponent, SeriesDetailComponent, SearchComponent],
   imports: [
     BrowserModule,
     MatToolbarModule,

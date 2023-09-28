@@ -10,12 +10,13 @@ import { Router } from '@angular/router';
 export class NavbarComponent {
   constructor(private router: Router) {}
 
-  isSearchExpanded = false;
 
-  toggleSearch() {
-    this.isSearchExpanded = !this.isSearchExpanded;
-  }
+ 
   navigateToHome() {
     this.router.navigate(['']);
+  }
+
+  goToSearch(): void {
+    this.router.navigate(['/search']);
   }
 }

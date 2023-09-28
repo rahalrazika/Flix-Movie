@@ -5,6 +5,7 @@ import { RegistrationComponent } from './pages/registration/registration.compone
 import { HomeComponent } from './pages/home/home.component';
 import { MovieDetailComponent } from './pages/movie-detail/movie-detail.component';
 import { SeriesDetailComponent } from './pages/series-detail/series-detail.component';
+import { SearchComponent } from './pages/search/search.component';
 
 const routes: Routes = [ 
   { path: '', component: HomeComponent },
@@ -12,6 +13,8 @@ const routes: Routes = [
   { path: 'registration', component: RegistrationComponent },
   { path: 'movie-detail/:id', component: MovieDetailComponent },
   { path: 'series-detail/:id', component: SeriesDetailComponent },
+  { path: 'search', component: SearchComponent },
+
 
   
 ];
