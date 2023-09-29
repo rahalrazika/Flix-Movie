@@ -26,7 +26,7 @@ Users can:
 
 
 ## Live Demo 🚀
-[FlixFlex](https://loopnnew--app.herokuapp.com/)
+[FlixFlex](https://flex-movie-angular.firebaseapp.com/)
 
 ## Getting Started 💻
 
