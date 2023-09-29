@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "angular-flix-movie"
-  }
+    "default": "flex-movie-angular",
+    "y": "flex-movie-angular"
+  },
+  "targets": {},
+  "etags": {}
 }
