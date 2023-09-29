@@ -14,7 +14,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { RegistrationComponent } from './pages/registration/registration.component';
+import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { LoginComponent } from './pages/login/login.component';
 import { MatCardModule } from '@angular/material/card';
 import { AppRoutingModule } from './app-routing.module';
@@ -32,16 +32,19 @@ import { SeriesDetailComponent } from './pages/series-detail/series-detail.compo
 import { SearchComponent } from './pages/search/search.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './services/auth.service';
+import { MatMenuModule } from '@angular/material/menu';
+
 
 
 
 
 @NgModule({
-  declarations: [AppComponent, RegistrationComponent, LoginComponent, HomeComponent, NavbarComponent, FooterComponent, SliderComponent, PaginationComponent, AllMoviesComponent, AllSeriesComponent, MovieDetailComponent, SeriesDetailComponent, SearchComponent],
+  declarations: [AppComponent, SignUpComponent, LoginComponent, HomeComponent, NavbarComponent, FooterComponent, SliderComponent, PaginationComponent, AllMoviesComponent, AllSeriesComponent, MovieDetailComponent, SeriesDetailComponent, SearchComponent],
   imports: [
     BrowserModule,
     MatToolbarModule,
     MatIconModule,
+    MatMenuModule,
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,

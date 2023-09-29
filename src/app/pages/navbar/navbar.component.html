@@ -5,11 +5,27 @@
   <div class="navbar-links">
     <div class="search-bar">
       <button mat-button matSuffix (click)="goToSearch()">
-        <mat-icon>{{'search' }}</mat-icon>
+        <mat-icon>{{ "search" }}</mat-icon>
       </button>
     </div>
-    <div class="login-button">
-      <button mat-raised-button routerLink="/login">Login</button>
-    </div>
+    <ng-container *ngIf="isUserLoggedIn(); else loginButton">
+      <div class="logout-button">
+        <button mat-button [matMenuTriggerFor]="userMenu">
+          <mat-icon>account_circle</mat-icon>
+          <mat-icon>expand_more</mat-icon>
+        </button>
+      </div>
+    </ng-container>
+    <ng-template #loginButton>
+      <div class="login-button">
+        <button mat-raised-button routerLink="/login">Login</button>
+      </div>
+    </ng-template>
   </div>
 </div>
+<mat-menu #userMenu="matMenu">
+  <button mat-menu-item (click)="logout()">
+    <mat-icon>logout</mat-icon>
+    Logout
+  </button>
+</mat-menu>
