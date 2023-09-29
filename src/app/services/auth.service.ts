@@ -8,13 +8,13 @@ import {
   UserInfo,
   UserCredential,
 } from '@angular/fire/auth';
-import { concatMap, from, Observable, of, switchMap } from 'rxjs';
+import { from, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  //currentUser$ = authState(this.auth);
+  currentUser$ = authState(this.auth);
 
   constructor(private auth: Auth) { }
 
@@ -29,4 +29,9 @@ export class AuthService {
   logout(): Observable<any> {
     return from(this.auth.signOut());
   }
+  isLoggedIn(): boolean {
+    const user = this.auth.currentUser;
+    return !!user;
+  }
+
 }
